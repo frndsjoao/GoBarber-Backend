@@ -35,7 +35,7 @@ local.properties
 
 # node.js
 #
-__coverage/
+coverage/
 node_modules/
 npm-debug.log
 yarn-error.log
