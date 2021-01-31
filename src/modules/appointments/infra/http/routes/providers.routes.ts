@@ -6,20 +6,21 @@ import ProviderMonthAvailabilityController from '../controllers/ProviderMonthAva
 import ProviderDayAvailabilityController from '../controllers/ProviderDayAvailabilityController';
 
 const providersRouter = Router();
+
 const providersController = new ProvidersController();
 const providerDayAvailabilityController = new ProviderDayAvailabilityController();
 const providerMonthAvailabilityController = new ProviderMonthAvailabilityController();
 
 providersRouter.use(ensureAuthenticated);
 
-providersRouter.get('/', providersController.create);
+providersRouter.get('/', providersController.index);
 providersRouter.get(
   '/:provider_id/month-availability',
-  providerMonthAvailabilityController.create,
+  providerMonthAvailabilityController.index,
 );
 providersRouter.get(
   '/:provider_id/day-availability',
-  providerDayAvailabilityController.create,
+  providerDayAvailabilityController.index,
 );
 
 export default providersRouter;
