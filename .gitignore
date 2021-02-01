@@ -37,8 +37,10 @@ local.properties
 #
 coverage/
 node_modules/
+.env
 npm-debug.log
 yarn-error.log
+ormconfig.json
 
 # BUCK
 buck-out/
