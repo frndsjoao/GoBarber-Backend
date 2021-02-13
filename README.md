@@ -1,59 +1,97 @@
-# Recuperação de senha
-**Requisitos Funcionais**
-- O usuario deve poder recuperar sua senha informando o seu e-mail;
-- O usuario deve receber um e-mail com instruções de recuperação de senha;
-- O usuario deve poder resetar sua senha. 
+<h1 align="center">
+  <img alt="logo" src="./public/logo.svg">
+</h1>
+<h3 align="center">
+  API for GoBarber
+</h3>
 
-**Requisitos Não Funcionais**
-- Utilizar mailtrap para testar envios em ambiente de desenvolvimento;
-- Utilizar o Amazon SES para envios em produção;
-- O envio de e-mail deve acontecer em segundo plano (background job).
+<p align="center">
+  <img alt="Top language" src="https://img.shields.io/github/languages/top/frndsjoao/GoBarber-web?color=%2315C465">
+  
+  <img alt="GitHub" src="https://img.shields.io/github/license/frndsjoao/GoBarber-web?color=%2315C465">
 
-**Regras de Negócios**
-- O link enviado por e-mail deve expirar em 2h;
-- O usuário precisa confirmar a nova senha ao resetar sua senha;
+  <a href="https://www.linkedin.com/in/frnds-joao/" target="_blank" rel="noopener noreferrer">
+    <img alt="Made by" src="https://img.shields.io/badge/made%20by-João%20Pedro%20A.-%2315C465">
+  </a>
+  
+</p>
 
-# Atualização do perfil 
-**Requisitos Funcionais**
-- O usuario deve poder atualizar seu perfil (nome, email e senha);
-
-**Requisitos Não Funcionais**
-
-**Regras de Negócios**
-- O usuário não pode alterar seu e-mail para um e-mail já utilizado.
-- Para atualizar a senha, o usuário deve informar a senha antiga;
-- Para atualizar a senha, o usuário deve confirmar a nova senha;
+<p align="center">
+  <a href="#%EF%B8%8F-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started">Getting started</a>
 
 
-# Painel do prestador
-**Requisitos Funcionais**
-- O usuário deve poder visualizar todos os agendamentos listados de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas.
+## 📄 About the project
 
-**Requisitos Não Funcionais**
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando o Socket.io;
+Go to **web** here: [GoBarber Rest API](https://github.com/frndsjoao/GoBarber-web)</br>
+Go to **mobile client** here: [GoBarber Mobile](https://github.com/frndsjoao/GoBarber-app)</br>
 
-**Regras de Negócios**
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa gerenciar;
+This api provides everything needed to organize appointments for barbers and customers.
+
+**Gobarber is an application developed during GoStack Bootcamp, by Rocketseat, focused to learn the best use of ReactJS.**
+I'm totally thankful to Rocketseat for the excellent bootcamp.
 
 
-# Agendamento de serviços
-**Requisitos Funcionais**
-- O usuario deve poder listar todos os prestadores de serviços cadastrados;
-- O usuário deve poder visualizar as datas com horário disponíveis para agendamento com um prestador;
-- O usuario deve poder listar horário disponiveis para agendamento em um dia especifico com um prestador;
-- O usuário deve poder realizar o agendamento de um serviço.
+## 💻 Technologies
 
-**Requisitos Não Funcionais**
-- A listagem de prestadores deve ser armazenada em cache;
-- 
+Technologies that I used to develop this api
 
-**Regras de Negócios**
-- Cada agendamento deve durar exatamente 1h;
-- Os agendamentos devem estar disponiveis entre 8h às 18h;
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo mesmo.
+<p>
+  <a href="https://nodejs.org/en/">NodeJS</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://www.typescriptlang.org/">Typescript</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://expressjs.com/pt-br/">Express</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/expressjs/multer">Multer</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://typeorm.io/#/">TypeORM</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://www.postgresql.org/">PostgreSQL</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://jestjs.io/">Jest</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://eslint.org/">Eslint</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://prettier.io/">Prettier</a>
+</p>
+
+
+## 💻 Getting started
+
+### ⚠ Requirements
+
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/) or [npm](https://www.npmjs.com/)
+- An instance of [PostgreSQL](https://www.postgresql.org/)
+
+**Clone the project and access the folder**
+
+```bash
+$ git clone https://github.com/frndsjoao/GoBarber-backend.git && cd gobarber-backend
+```
+
+**Then install the dependencies**
+
+```bash
+# Install the dependencies
+$ yarn
+
+# Make a copy of '.env.example' to '.env'
+# and set with YOUR environment variables.
+$ cp .env.example .env
+
+# Create the instance of postgreSQL using docker
+$ docker run --name gobarber-postgres -e POSTGRES_USER=docker \
+              -e POSTGRES_DB=gobarber -e POSTGRES_PASSWORD=docker \
+              -p 5432:5432 -d postgres
+
+# Create the instance of mongoDB using docker
+$ docker run --name gobarber-mongodb -p 27017:27017 -d -t mongo
+
+# Create the instance of redis using docker
+$ docker run --name gobarber-redis -p 6379:6379 -d -t redis:alpine
+
+# Once the services are running, run the migrations
+$ yarn typeorm migration:run
+
+# Start the api service
+$ yarn dev:server
+```
+
+## 📝 License
+
+Not specified.
