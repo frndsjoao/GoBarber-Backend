@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="logo" src="./public/logo.svg">
+  <img alt="logo" src="./github/logo.svg">
 </h1>
 <h3 align="center">
   API for GoBarber
@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="#%EF%B8%8F-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-about-the-project">About the project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-getting-started">Getting started</a>
 
