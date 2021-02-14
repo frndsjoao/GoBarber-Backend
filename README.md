@@ -24,7 +24,7 @@
 
 ## 📄 About the project
 
-Go to **web** here: [GoBarber Rest API](https://github.com/frndsjoao/GoBarber-web)</br>
+Go to **web** here: [GoBarber Web](https://github.com/frndsjoao/GoBarber-web)</br>
 Go to **mobile client** here: [GoBarber Mobile](https://github.com/frndsjoao/GoBarber-app)</br>
 
 This api provides everything needed to organize appointments for barbers and customers.
